@@ -1,7 +1,13 @@
 package abstractions;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
-public abstract class Node {
-    ArrayList <Scale> scales;
+public class Node {
+    public HashMap<String, Base> bases;
+    public Node(HashMap<String, Base> base){
+        this.bases = base;
+    };
+    public Node(){
+    };
+
 }
