@@ -26,7 +26,7 @@ public class NodeServerTest {
 
     @Test
     public void trimApply() {
-        var trim2 = Trimmer.trimApply(input);
+        var trim2 = Trimmer.trimWeight(input);
         assertEquals("4.50", trim2);
     }
 
