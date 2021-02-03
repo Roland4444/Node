@@ -14,27 +14,9 @@ public class Base3000RS extends BaseRS {
 
     @Override
     public String getWeight()  {
-        /*try {
-            if (serialPort.openPort()) {
-                serialPort.setParams(boudrate, 8, 1, 0);
-            }
-        } catch (SerialPortException e) {
-            System.out.println(e.getExceptionType());
-        }
-        try {
-            serialPort.writeByte(Command);
-            String data = serialPort.readString();
-            if (data.length()>=10)
-                return Trimmer.trimApply(serialPort.readString());
-            else
-                return "errTrim";
-        } catch (SerialPortException e) {
-            System.out.println(e.getExceptionType());
-            return "errr";
-        }*/
         String data = super.getWeight();
         if (data.length()>=10)
-            return Trimmer.trimApply(data);
+            return Trimmer.trimWeight(data);
         else
             return "errTrim";
     }

@@ -58,6 +58,20 @@ public class NodeServer {
     }
 
 
+    public static  String parseWeight600(String weight) throws IOException {
+        if (weight != null) {
+            String[] results = weight.split(" ");
+            if (results.length >= 4) {
+                String hx = results[3] + results[2];
+                weight = String.valueOf((Integer.parseInt(hx, 16)) * 0.1);
+            }
+        }
+        return new BigDecimal(weight)
+                .setScale(2, BigDecimal.ROUND_HALF_UP)
+                .toString();
+
+    }
+
 
     public static String parseWeight(String weight) {
         Pattern p = Pattern.compile(".*GS.*[0-9]{1,5}.*kg.*");//find strings with weight
