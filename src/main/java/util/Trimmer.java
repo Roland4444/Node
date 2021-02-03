@@ -11,8 +11,15 @@ public class Trimmer {
     };
 
 
-    public static String hexToString(String hex){
-        return trimApply(String.valueOf(Integer.parseInt(hex.substring(6,11).replace(" ",""), 16)));
+    public static String hexToString(String weight){
+        if (weight != null) {
+            String[] results = weight.split(" ");
+            if (results.length >= 4) {
+                String hx = results[3] + results[2];
+                weight = String.valueOf((Integer.parseInt(hx, 16)) * 0.1);
+            }
+        }
+        return trimApply(weight);
     }
 
     public static String trimApply(String input){

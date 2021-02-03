@@ -18,9 +18,9 @@ public class TrimmerTest {
 
     @Test
     public void hexToString() throws IOException {
-        byte[] byteArray = Files.readAllBytes(Path.of("out600_0.bin"));
+        byte[] byteArray = Files.readAllBytes(Path.of("out600_1.bin"));
         String hex = new String(byteArray);
         System.out.println(hex + "->" + hex.substring(6,11));
-        assertEquals("0.00",Trimmer.hexToString(hex));
+        assertEquals("2.10",Trimmer.hexToString(hex));
     }
 }

@@ -32,12 +32,12 @@ public class NodeServerTest {
 
     @Test
     public void parse600() throws IOException {
-        byte[] byteArray = Files.readAllBytes(Path.of("out.bin"));
+        byte[] byteArray = Files.readAllBytes(Path.of("out600_1.bin"));
         String hex = new String(byteArray);
         System.out.println(hex);
-        //String res = NodeServer.parseWeight600(hex);
+        String res = Trimmer.hexToString(hex);
 
         //assertEquals(hex, res);
-        //assertEquals("0.00", res);
+        assertEquals("2.10", res);
     }
 }
