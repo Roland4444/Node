@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 import static spark.Spark.get;
 public class NodeServer {
-    private static String mockWeight;
+    private static String mockWeight = "0.00";
 
     public static void main(String [] args) throws IOException, ParseException {
 
