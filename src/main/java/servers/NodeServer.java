@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 import static spark.Spark.get;
 public class NodeServer {
-
+    private static String mockWeight;
 
     public static void main(String [] args) throws IOException, ParseException {
 
@@ -29,6 +29,13 @@ public class NodeServer {
             if (scale != null)
                 return scale.getWeight() ;
             return -1;
+        });
+        get("set_mock", (req, res) -> {
+            mockWeight = req.queryParams("weight");
+            return mockWeight;
+        });
+        get("get_mock", (request, response) -> {
+            return mockWeight;
         });
     }
 
