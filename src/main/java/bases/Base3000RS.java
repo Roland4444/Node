@@ -1,8 +1,7 @@
 package bases;
 
-import abstractions.Base;
 import abstractions.BaseRS;
-import jssc.SerialPortException;
+
 
 public class Base3000RS extends BaseRS {
     public Base3000RS(String Port, String UUID){

@@ -1,6 +1,5 @@
 package bases;
 
-import abstractions.Base;
 import abstractions.BaseRS;
 
 public class Base60RS extends BaseRS {
