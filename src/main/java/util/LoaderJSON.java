@@ -1,5 +1,4 @@
 package util;
-
 import abstractions.Base;
 import bases.Base3000RS;
 import bases.Base600RS;

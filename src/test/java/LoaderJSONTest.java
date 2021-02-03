@@ -22,7 +22,7 @@ public class LoaderJSONTest {
                 """;
 
     public String entry = """
-{"UUID":"1", "Port":"COM6", "Type":"Base60RS"}
+                    {"UUID":"1", "Port":"COM6", "Type":"Base60RS"}
 """;
 
     public LoaderJSONTest(){

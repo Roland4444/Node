@@ -8,6 +8,8 @@ import org.json.simple.parser.ParseException;
 import util.LoaderJSON;
 
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -54,6 +56,8 @@ public class NodeServer {
 
         };
     }
+
+
 
     public static String parseWeight(String weight) {
         Pattern p = Pattern.compile(".*GS.*[0-9]{1,5}.*kg.*");//find strings with weight
