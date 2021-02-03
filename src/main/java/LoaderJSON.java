@@ -2,7 +2,7 @@ import abstractions.Base;
 import bases.Base3000RS;
 import bases.Base600RS;
 import bases.Base60RS;
-import bases.Type;
+import abstractions.Type;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
