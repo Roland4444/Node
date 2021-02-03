@@ -6,16 +6,12 @@ import bases.Base3000RS;
 import bases.Base60RS;
 import org.json.simple.parser.ParseException;
 import util.LoaderJSON;
-
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import static spark.Spark.get;
 public class NodeServer {
     private static String mockWeight = "0.00";

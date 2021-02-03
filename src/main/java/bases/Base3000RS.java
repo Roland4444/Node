@@ -1,7 +1,6 @@
 package bases;
 
 import abstractions.BaseRS;
-import jssc.SerialPortException;
 import util.Trimmer;
 
 
