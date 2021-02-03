@@ -23,7 +23,7 @@ public class BaseRS extends Base{
             return serialPort.readString();
         } catch (SerialPortException e) {
             System.out.println(e.getExceptionType());
-            return "ReadErr";
+            return "errr";
         }
     }
 

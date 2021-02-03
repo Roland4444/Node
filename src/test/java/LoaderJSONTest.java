@@ -5,6 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.Test;
+import util.LoaderJSON;
 
 import java.util.HashMap;
 
@@ -30,7 +31,7 @@ public class LoaderJSONTest {
     }
     @Test
     public void loadJSON() throws ParseException {
-        assertEquals(expected.size(),LoaderJSON.loadJSON(JSON).size());
+        assertEquals(expected.size(), LoaderJSON.loadJSON(JSON).size());
 
     }
 

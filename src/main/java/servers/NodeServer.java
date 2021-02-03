@@ -4,6 +4,12 @@ import abstractions.Base;
 import abstractions.Node;
 import bases.Base3000RS;
 import bases.Base60RS;
+import org.json.simple.parser.ParseException;
+import util.LoaderJSON;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -11,11 +17,12 @@ import java.util.regex.Pattern;
 import static spark.Spark.get;
 public class NodeServer {
 
-    public static void main(String [] args){
-        Scales scales = new  Scales();
-        Node currentNode = new Node();
-        currentNode.bases = scales.scalesAZKK;
 
+    public static void main(String [] args) throws IOException, ParseException {
+
+        Node currentNode = new Node();
+        ///currentNode.bases = scales.scalesAZKK;
+        currentNode.bases = LoaderJSON.loadJSON(new String(Files.readAllBytes(Path.of("config.json"))));
         get("get-weight", (request, response) -> {
             var scaleId = request.queryParams("scaleId");
             var scale = currentNode.bases.get(scaleId);
