@@ -2,7 +2,6 @@ package bases;
 
 import abstractions.BaseRS;
 import jssc.SerialPortException;
-import util.Trimmer;
 
 public class Base3002RS extends BaseRS {
     public Base3002RS(String Port, String UUID) {
@@ -12,7 +11,7 @@ public class Base3002RS extends BaseRS {
     }
     @Override
     public String getWeight()  {
-        String hex="";
+        String hex;
         try {
             if (serialPort.openPort()) {
                 serialPort.setParams(boudrate, 8, 1, 0);
@@ -25,7 +24,7 @@ public class Base3002RS extends BaseRS {
             hex = serialPort.readHexString();
         } catch (SerialPortException e) {
             System.out.println(e.getExceptionType());
-            return "errr";
+            return "err";
         }
         return hex;
     }
