@@ -37,4 +37,11 @@ public class TrimmerTest {
         System.out.println(new String(bytes));
         assertEquals("1900.00", Trimmer.trimApply(Trimmer.parseWeight(new String(bytes))));
     }
+
+    @Test
+    public void parseWeight00() throws IOException {
+        var bytes = Files.readAllBytes(Path.of("out60RS0.bin"));
+        System.out.println(new String(bytes));
+        assertEquals("0.00", Trimmer.trimApply(Trimmer.parseWeight(new String(bytes))));
+    }
 }
