@@ -30,6 +30,14 @@ public class NodeServer {
             return mockWeight;
         });
         get("get_mock", (request, response) -> mockWeight);
+
+        get("hole", (request, response) -> {
+            var scaleId = request.queryParams("scaleId");
+            var scale = currentNode.bases.get(scaleId);
+            if (scale != null)
+                return scale.getObj();
+            return -1;
+        });
     }
 
     public static String parseWeight(String weight) {
