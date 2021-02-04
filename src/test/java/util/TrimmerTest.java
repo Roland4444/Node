@@ -24,7 +24,7 @@ public class TrimmerTest {
         assertEquals("2.10",Trimmer.hexToString(hex));
     }
 
-    @Test
+   ///// @Test
     public void hex3000_3002() throws IOException {
         String hex =new String( Files.readAllBytes(Path.of("2_5246866811982449245.htm")));
         assertEquals("2.10",Trimmer.hexToString(hex));
