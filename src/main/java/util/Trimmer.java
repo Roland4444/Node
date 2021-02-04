@@ -3,6 +3,8 @@ package util;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Trimmer {
     public static String trimWeight(String input){
@@ -27,4 +29,15 @@ public class Trimmer {
         BigDecimal result  =  bd.setScale(2, RoundingMode.HALF_UP);
         return String.valueOf(result);
     };
+
+
+    public static String parseWeight(String weight) {
+        Pattern p = Pattern.compile("\\=.*[0-9.]{5,6}+\\$");
+        Matcher m = p.matcher(weight);
+        if(m.find()){
+            return weight.substring(m.start(),m.end()).replaceAll("[^0-9]","");
+        }
+        return "";
+    }
+
 }
