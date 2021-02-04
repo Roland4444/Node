@@ -11,7 +11,7 @@ public class Base600RS extends BaseRS {
     }
     @Override
     public String getWeight()  {
-        String hex="";
+        String hex;
         try {
             if (serialPort.openPort()) {
                 serialPort.setParams(boudrate, 8, 1, 0);
@@ -24,7 +24,7 @@ public class Base600RS extends BaseRS {
             hex = serialPort.readHexString();
         } catch (SerialPortException e) {
             System.out.println(e.getExceptionType());
-            return "errr";
+            return "err";
         }
         return Trimmer.hexToString(hex);
     }

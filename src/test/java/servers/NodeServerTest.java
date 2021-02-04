@@ -30,7 +30,7 @@ public class NodeServerTest {
         assertEquals("4.50", trim2);
     }
 
-    @Test
+//    @Test
     public void parse600() throws IOException {
         byte[] byteArray = Files.readAllBytes(Path.of("out600_1.bin"));
         String hex = new String(byteArray);

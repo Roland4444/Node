@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class LoaderJSON{
     public static JSONArray js(String json) throws ParseException {
         return (JSONArray) new JSONParser().parse(json);
-    };
+    }
     public static Base gen(JSONObject input){
         String UUID = (String) input.get("UUID");
         String Port = (String) input.get("Port");
