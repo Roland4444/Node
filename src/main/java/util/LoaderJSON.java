@@ -1,6 +1,7 @@
 package util;
 import abstractions.Base;
 import bases.Base3000RS;
+import bases.Base3002RS;
 import bases.Base600RS;
 import bases.Base60RS;
 import abstractions.Type;
@@ -22,6 +23,7 @@ public class LoaderJSON{
             case Base60RS -> result=(new Base60RS(Port, UUID));
             case Base3000RS-> result=(new Base3000RS(Port, UUID));
             case Base600RS -> result=(new Base600RS(Port, UUID));
+            case Base3002RS ->  result=(new Base3002RS(Port, UUID));
         }
         return result;
     }

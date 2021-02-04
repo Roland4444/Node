@@ -25,6 +25,12 @@ public class TrimmerTest {
     }
 
     @Test
+    public void hex3000_3002() throws IOException {
+        String hex =new String( Files.readAllBytes(Path.of("2_5246866811982449245.htm")));
+        assertEquals("2.10",Trimmer.hexToString(hex));
+    }
+
+    @Test
     public void parseWeight() throws IOException {
         var bytes = Files.readAllBytes(Path.of("outRS60_90.bin"));
         System.out.println(new String(bytes));
