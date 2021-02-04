@@ -1,1 +1,1 @@
-[{"UUID":"1", "Port":"COM8", "Type":"Base600RS"},{"UUID":"2", "Port":"COM7", "Type":"Base3000RS"}, {"UUID":"3", "Port":"/dev/ttyS0", "Type":"Base60RS"}]
+[{"UUID":"1", "Port":"COM8", "Type":"Base600RS"},{"UUID":"2", "Port":"COM7", "Type":"Base3000RS"}, {"UUID":"3", "Port":"/dev/ttyS0", "Type":"Base60RS"}, {"UUID":"4", "Port":"COM5", "Type":"Base3002RS"}]
