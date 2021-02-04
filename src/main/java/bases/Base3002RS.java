@@ -22,7 +22,7 @@ public class Base3002RS extends BaseRS {
         }
         try {
             serialPort.writeByte(Command);
-            hex = serialPort.readHexString();
+            hex = serialPort.readString();
         } catch (SerialPortException e) {
             System.out.println(e.getExceptionType());
             return "errr";
