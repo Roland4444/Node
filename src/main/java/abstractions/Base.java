@@ -13,4 +13,5 @@ public abstract class Base {
         this.UUID = UUID;
     };
     public abstract String getWeight() throws SerialPortException;
+
 }

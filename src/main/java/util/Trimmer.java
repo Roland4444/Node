@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class Trimmer {
     public static String trimWeight(String input){
-        var trimmed = input.substring(2, 10);
+        String trimmed = input.substring(2, 10);
         return trimApply(trimmed);
     };
     public static String hexToString(String weight){

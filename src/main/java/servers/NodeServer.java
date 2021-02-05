@@ -1,18 +1,32 @@
 package servers;
 import abstractions.Node;
 import org.json.simple.parser.ParseException;
+import spark.ModelAndView;
+import spark.template.velocity.VelocityTemplateEngine;
+import spark.utils.IOUtils;
 import util.LoaderJSON;
+
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.http.Part;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static spark.Spark.get;
+import static spark.Spark.post;
+
 public class NodeServer {
     private static String mockWeight = "0.00";
+    public static void reload(Node currentNode) throws IOException, ParseException {
+        currentNode.bases = LoaderJSON.loadJSON(new String(Files.readAllBytes(Path.of("config.json"))));
+    }
     public static void main(String[] args) throws IOException, ParseException {
         Node currentNode = new Node();
-        currentNode.bases = LoaderJSON.loadJSON(new String(Files.readAllBytes(Path.of("config.json"))));
+        reload(currentNode);
         get("get-weight", (request, response) -> {
             var scaleId = request.queryParams("scaleId");
             var scale = currentNode.bases.get(scaleId);
@@ -25,6 +39,11 @@ public class NodeServer {
             return mockWeight;
         });
         get("get_mock", (request, response) -> mockWeight);
+
+        get("reload", (request, response) -> {
+            reload(currentNode);;
+            return "OK";
+        });
     }
 
     public static String parseWeight(String weight) {
