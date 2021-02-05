@@ -14,6 +14,8 @@ public class Trimmer {
 
 
     public static String hexToString(String weight){
+        if (weight==null)
+            return "";
         if (weight != null) {
             String[] results = weight.split(" ");
             if (results.length >= 4) {
@@ -43,8 +45,7 @@ public class Trimmer {
 
 
     public static String parse3002(String weight){
-        System.out.println(new StringBuilder().append(weight.substring(weight.indexOf("=")+1, weight.indexOf("=")+ 9)).reverse().toString());
-        return new StringBuilder().append(weight.substring(weight.indexOf("=")+1, weight.indexOf("=")+ 9)).reverse().toString();
+        return new StringBuilder().append(weight, weight.indexOf("=")+1, weight.indexOf("=")+ 9).reverse().toString();
     }
 
 }
