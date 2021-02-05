@@ -38,6 +38,11 @@
             <version>2.7.1</version>
         </dependency>
         <dependency>
+            <groupId>org.example</groupId>
+            <artifactId>MessagingAVS</artifactId>
+            <version>1.5-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
@@ -54,6 +59,7 @@
                 <configuration>
                     <source>15</source>
                     <target>15</target>
+                    <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
                 <executions>
                     <execution>

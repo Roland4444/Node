@@ -1,6 +1,7 @@
 package util;
 
 
+import Message.abstractions.BinaryMessage;
 import org.junit.Test;
 
 import java.io.FileOutputStream;
@@ -14,6 +15,10 @@ public class HTTPClientTest {
     String magicfile ="magic.bin";
     String url ="http://192.168.22.3:4567/get-weight?scaleId=4";
     String magic ="http://192.168.22.3:4567/hole?scaleId=4";
+    String magicstr ="magicstr.txt";
+    String magichex ="magichex.txt";
+    String magicbin ="magic.bin";
+
     @Test
     public void getGETResponcebinary() throws IOException, InterruptedException {
         var fos = new FileOutputStream(fn);
@@ -30,9 +35,10 @@ public class HTTPClientTest {
 
     @Test
     public void getGETResponcebinary2_() throws IOException, InterruptedException {
-        var fos = new FileOutputStream(magicfile);
-        fos.write(HTTPClient.getGETResponcebinary(magic));;
-        fos.close();
+        Rec rec = (Rec) Saver.restored(HTTPClient.getGETResponcebinary(magic));
+        BinaryMessage.write(rec.bytes(), magicbin);
+        BinaryMessage.write(rec.str().getBytes(), magicstr);
+        BinaryMessage.write(rec.hex().getBytes(), magichex);
     }
 
 

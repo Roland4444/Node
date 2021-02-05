@@ -24,7 +24,7 @@ public class Saver {
         return Result;
     }
 
-    static Record restored(byte[] input) {
+    static Rec restored(byte[] input) {
         Object o = null;
         ByteArrayInputStream bis = new ByteArrayInputStream(input);
         ObjectInputStream in = null;
