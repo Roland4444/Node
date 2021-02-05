@@ -36,9 +36,9 @@ public class HTTPClientTest {
   //  @Test
     public void getGETResponcebinary2_() throws IOException, InterruptedException {
         Rec rec = (Rec) Saver.restored(HTTPClient.getGETResponcebinary(magic));
-        BinaryMessage.write(rec.bytes(), magicbin);
-        BinaryMessage.write(rec.str().getBytes(), magicstr);
-        BinaryMessage.write(rec.hex().getBytes(), magichex);
+        BinaryMessage.write(rec.bytes, magicbin);
+        BinaryMessage.write(rec.str.getBytes(), magicstr);
+        BinaryMessage.write(rec.hex.getBytes(), magichex);
     }
 
 

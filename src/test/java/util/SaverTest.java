@@ -10,7 +10,7 @@ public class SaverTest {
     public void savedToBLOB() {
         byte[] save = Saver.savedToBLOB(test);
         Rec restored = (Rec) Saver.restored(save);
-        assertEquals(test.str(), restored.str());
-        System.out.println(restored.hex()+"::"+restored.str());
+        assertEquals(test.str, restored.str);
+        System.out.println(restored.hex+"::"+restored.str);
     }
 }
