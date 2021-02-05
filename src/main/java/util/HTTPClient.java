@@ -1,14 +1,11 @@
 package util;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
-
 public class HTTPClient {
-
     public static byte[] getGETResponcebinary(String url) throws IOException, InterruptedException {
           HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -23,10 +20,7 @@ public class HTTPClient {
         if (response.statusCode()==200)
             return response.body();
         else return "shit happens".getBytes();
-
     }
-
-
     public static String getGETResponceString(String url) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -41,6 +35,5 @@ public class HTTPClient {
         if (response.statusCode()==200)
             return response.body();
         else return "shit happens";
-
     }
 }

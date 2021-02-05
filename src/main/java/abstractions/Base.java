@@ -1,9 +1,6 @@
 package abstractions;
-
 import jssc.SerialPortException;
-
 public abstract class Base {
-
     public final byte b3000 = 0b0010000;
     public final byte b600 = 0b01001010;
     public final byte b60 =  0b00000000;
@@ -15,11 +12,5 @@ public abstract class Base {
         this.PORT = Port;
         this.UUID = UUID;
     };
-
     public abstract String getWeight() throws SerialPortException;
-
-    public byte[] getObj(){
-        return null;
-    } ;
-
 }

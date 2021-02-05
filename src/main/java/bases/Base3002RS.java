@@ -1,8 +1,6 @@
 package bases;
-
 import abstractions.BaseRS;
 import util.Trimmer;
-
 public class Base3002RS extends BaseRS {
     public Base3002RS(String Port, String UUID) {
         super(Port, UUID);
@@ -13,7 +11,5 @@ public class Base3002RS extends BaseRS {
     public String getWeight()  {
         return Trimmer.trimApply(Trimmer.parse3002(super.getWeight()));
     }
-
-
 
 }

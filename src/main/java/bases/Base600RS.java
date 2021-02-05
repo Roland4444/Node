@@ -2,7 +2,6 @@ package bases;
 import abstractions.BaseRS;
 import jssc.SerialPortException;
 import util.Trimmer;
-
 public class Base600RS extends BaseRS {
     public Base600RS(String Port, String UUID) {
         super(Port, UUID);

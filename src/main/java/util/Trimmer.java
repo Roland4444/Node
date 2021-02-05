@@ -1,18 +1,13 @@
 package util;
-
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 public class Trimmer {
     public static String trimWeight(String input){
         var trimmed = input.substring(2, 10);
         return trimApply(trimmed);
     };
-
-
     public static String hexToString(String weight){
         if (weight==null)
             return "";
@@ -33,7 +28,6 @@ public class Trimmer {
         return String.valueOf(result);
     };
 
-
     public static String parseWeight(String weight) {
         Pattern p = Pattern.compile("\\=.*[0-9.]{5,6}+\\$");
         Matcher m = p.matcher(weight);
@@ -43,9 +37,7 @@ public class Trimmer {
         return "";
     }
 
-
     public static String parse3002(String weight){
         return new StringBuilder().append(weight, weight.indexOf("=")+1, weight.indexOf("=")+ 9).reverse().toString();
     }
-
 }

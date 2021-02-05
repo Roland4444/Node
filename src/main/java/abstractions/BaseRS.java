@@ -1,9 +1,7 @@
 package abstractions;
 import jssc.SerialPort;
 import jssc.SerialPortException;
-
 public class BaseRS extends Base{
-
     public SerialPort serialPort;
     public BaseRS(String Port, String UUID){
         super(Port, UUID);

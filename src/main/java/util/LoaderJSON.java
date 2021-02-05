@@ -27,7 +27,6 @@ public class LoaderJSON{
         }
         return result;
     }
-
     public static HashMap<String, Base> loadJSON(String json) throws ParseException {
         HashMap <String, Base> map = new HashMap<>();
         js(json).forEach(a -> map.put(gen((JSONObject) a).UUID, gen((JSONObject) a)));
