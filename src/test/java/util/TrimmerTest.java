@@ -50,4 +50,17 @@ public class TrimmerTest {
         System.out.println(new String(bytes));
         assertEquals("0.00", Trimmer.trimApply(Trimmer.parseWeight(new String(bytes))));
     }
+
+    @Test
+    public void parse3002() throws IOException {
+        var bytes = Files.readAllBytes(Path.of("out3002.text"));
+        System.out.println(new String(bytes));
+        assertEquals("18.00", Trimmer.trimApply(Trimmer.parse3002(new String(bytes))));
+    }
+
+    @Test
+    public void parse3002__() throws IOException {
+        String input = "0=8100000-=8100000-=8100000-=8100";
+        assertEquals("-18.00", Trimmer.trimApply(Trimmer.parse3002(input)));
+    }
 }

@@ -25,7 +25,8 @@ public class Trimmer {
     }
 
     public static String trimApply(String input){
-        BigDecimal bd = new BigDecimal(input);
+        String hook=input.replace("=","");
+        BigDecimal bd = new BigDecimal(hook);
         BigDecimal result  =  bd.setScale(2, RoundingMode.HALF_UP);
         return String.valueOf(result);
     };
@@ -38,6 +39,12 @@ public class Trimmer {
             return weight.substring(m.start(),m.end()).replaceAll("[^0-9]","");
         }
         return "";
+    }
+
+
+    public static String parse3002(String weight){
+        System.out.println(new StringBuilder().append(weight.substring(weight.indexOf("=")+1, weight.indexOf("=")+ 9)).reverse().toString());
+        return new StringBuilder().append(weight.substring(weight.indexOf("=")+1, weight.indexOf("=")+ 9)).reverse().toString();
     }
 
 }
