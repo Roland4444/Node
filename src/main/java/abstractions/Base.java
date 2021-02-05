@@ -18,6 +18,8 @@ public abstract class Base {
 
     public abstract String getWeight() throws SerialPortException;
 
-    public abstract byte[] getObj() ;
+    public byte[] getObj(){
+        return null;
+    } ;
 
 }

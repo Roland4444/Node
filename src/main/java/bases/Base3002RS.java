@@ -33,7 +33,6 @@ public class Base3002RS extends BaseRS {
 
     @Override
     public byte[] getObj()  {
-
         Rec rec;
         try {
             if (serialPort.openPort()) {
