@@ -1,28 +1,40 @@
 package abstractions;
+
 import jssc.SerialPort;
 import jssc.SerialPortException;
-public class BaseRS extends Base{
+
+import static util.Utils.waiting;
+
+public class BaseRS extends Base {
     public SerialPort serialPort;
-    public BaseRS(String Port, String UUID){
+    public String weight;
+
+    public BaseRS(String Port, String UUID) {
         super(Port, UUID);
         serialPort = new SerialPort(Port);
     }
 
-    public String getWeight()  {
-        try {
-            if (serialPort.openPort()) {
-                serialPort.setParams(boudrate, 8, 1, 0);
+    @Override
+    public void run() {
+        while (true) {
+            try {
+                if (serialPort.openPort())
+                    serialPort.setParams(boudrate, 8, 1, 0);
+            } catch (SerialPortException ignored) {
             }
-        } catch (SerialPortException e) {
-            System.out.println(e.getExceptionType());
+            try {
+                serialPort.writeByte(Command);
+                this.weight = serialPort.readString();
+            } catch (SerialPortException e) {
+                weight = e.getExceptionType();
+            }
+            waiting(2000);
         }
-        try {
-            serialPort.writeByte(Command);
-            return serialPort.readString();
-        } catch (SerialPortException e) {
-            System.out.println(e.getExceptionType());
-            return "errr";
-        }
+
+    }
+
+    public String getWeight() {
+        return this.weight;
     }
 
 }

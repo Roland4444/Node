@@ -16,8 +16,8 @@ public class NodeServerTest {
     @Test
     public void parseWeight() {
         String weigth = "ww000004.5kg";
-        assertNotEquals(null, NodeServer.parseWeight(weigth));
-        System.out.println("OUT"+NodeServer.parseWeight(weigth));
+        assertNotEquals(null, Trimmer.parseWeight(weigth));
+        System.out.println("OUT"+Trimmer.parseWeight(weigth));
     }
 
     @Test

@@ -15,14 +15,14 @@ public class HTTPClientTest {
     String magichex ="magichex.txt";
     String magicbin ="magic.bin";
 
-    @Test
+//    @Test
     public void getGETResponcebinary() throws IOException, InterruptedException {
         var fos = new FileOutputStream(fn);
         fos.write(HTTPClient.getGETResponcebinary(url));
         fos.close();
     }
 
-    @Test
+//    @Test
     public void getGETResponcebinary2() throws IOException, InterruptedException {
         var fos = new FileOutputStream(fn2);
         fos.write(HTTPClient.getGETResponceString(url).getBytes());
