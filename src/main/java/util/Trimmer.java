@@ -7,14 +7,17 @@ import java.util.regex.Pattern;
 
 public class Trimmer {
 
-    public static String trimWeight(String input) {
-        var trimmed = input.substring(2, 10);
-        return trimApply(trimmed);
+    public static String trimWeight(String weight) {
+        if (weight != null && weight.length() > 10) {
+            var trimmed = weight.substring(2, 10);
+            return trimApply(trimmed);
+        }
+        return "0.00";
     }
 
     public static String hexToString(String weight) {
         if (weight == null)
-            return "";
+            return "0.00";
         String[] results = weight.split(" ");
         if (results.length >= 4) {
             String hx = results[3] + results[2];

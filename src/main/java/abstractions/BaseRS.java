@@ -17,7 +17,6 @@ public class BaseRS extends Base {
     @Override
     public void run() {
         while (!isPause) {
-            System.out.println("run");
             try {
                 if (serialPort.openPort())
                     serialPort.setParams(boudrate, 8, 1, 0);

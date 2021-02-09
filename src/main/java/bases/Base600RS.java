@@ -17,7 +17,6 @@ public class Base600RS extends BaseRS {
     @Override
     public void run() {
         while (!isPause) {
-            System.out.println("run600" + currentThread());
             try {
                 if (serialPort.openPort())
                     serialPort.setParams(boudrate, 8, 1, 0);
