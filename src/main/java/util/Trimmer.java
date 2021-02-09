@@ -38,12 +38,14 @@ public class Trimmer {
     }
 
     public static String parseWeight(String weight) {
-        Pattern p = Pattern.compile("\\=.*[0-9.]{5,6}+\\$");
-        Matcher m = p.matcher(weight);
-        if (m.find()) {
-            return trimApply(weight.substring(m.start(), m.end()).replaceAll("[^0-9]", ""));
+        if (weight != null) {
+            Pattern p = Pattern.compile("\\=.*[0-9.]{5,6}+\\$");
+            Matcher m = p.matcher(weight);
+            if (m.find()) {
+                return trimApply(weight.substring(m.start(), m.end()).replaceAll("[^0-9]", ""));
+            }
         }
-        return "";
+        return "0.00";
     }
 
     public static String parse3002(String weight) {
