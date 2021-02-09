@@ -4,6 +4,7 @@ import abstractions.BaseRS;
 import jssc.SerialPortException;
 import util.Trimmer;
 
+import static util.Utils.isPause;
 import static util.Utils.waiting;
 
 public class Base600RS extends BaseRS {
@@ -15,7 +16,8 @@ public class Base600RS extends BaseRS {
 
     @Override
     public void run() {
-        while (true) {
+        while (!isPause) {
+            System.out.println("run600" + currentThread());
             try {
                 if (serialPort.openPort())
                     serialPort.setParams(boudrate, 8, 1, 0);

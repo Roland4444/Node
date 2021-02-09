@@ -3,7 +3,7 @@ package abstractions;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 
-import static util.Utils.waiting;
+import static util.Utils.*;
 
 public class BaseRS extends Base {
     public SerialPort serialPort;
@@ -16,7 +16,8 @@ public class BaseRS extends Base {
 
     @Override
     public void run() {
-        while (true) {
+        while (!isPause) {
+            System.out.println("run");
             try {
                 if (serialPort.openPort())
                     serialPort.setParams(boudrate, 8, 1, 0);
