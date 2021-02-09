@@ -17,4 +17,5 @@ public abstract class Base extends Thread {
     }
 
     public abstract String getWeight() throws SerialPortException;
+
 }

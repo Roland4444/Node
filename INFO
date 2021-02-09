@@ -1,0 +1,2 @@
+-XX:+UseEpsilonGC   -XX:+UnlockExperimentalVMOptions EPSILON GC
+-XX:+UseZGC         ZGC
