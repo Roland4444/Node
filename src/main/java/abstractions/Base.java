@@ -8,6 +8,7 @@ public abstract class Base {
     public String PORT;
     public String UUID;
     public int boudrate=4800;
+    public float LastWeight;
     public Base(String Port, String UUID){
         this.PORT = Port;
         this.UUID = UUID;

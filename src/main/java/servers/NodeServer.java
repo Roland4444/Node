@@ -4,6 +4,7 @@ import org.json.simple.parser.ParseException;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import spark.utils.IOUtils;
+import util.Checker;
 import util.LoaderJSON;
 
 import javax.servlet.MultipartConfigElement;
@@ -25,13 +26,21 @@ public class NodeServer {
         currentNode.bases = LoaderJSON.loadJSON(new String(Files.readAllBytes(Path.of("config.json"))));
     }
     public static void main(String[] args) throws IOException, ParseException {
+        System.out.println("LOADED NEW VERSION");
+        Checker Checker = new Checker();
         Node currentNode = new Node();
         reload(currentNode);
         get("get-weight", (request, response) -> {
             var scaleId = request.queryParams("scaleId");
+            System.out.println("REQUEST to read #"+scaleId);
             var scale = currentNode.bases.get(scaleId);
-            if (scale != null)
-                return scale.getWeight();
+            if (scale != null) {
+                var w = scale.getWeight();
+                if (Checker.isnumber(w))
+                    scale.LastWeight = Float.parseFloat(w);
+                System.out.println("READED ::"+w);
+                return scale.LastWeight;
+            }
             return -1;
         });
         get("set_mock", (req, res) -> {
